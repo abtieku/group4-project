@@ -1,3 +1,6 @@
+#large data file
+data/weekly_housing_market_data_most_recent.tsv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
