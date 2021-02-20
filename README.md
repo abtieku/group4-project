@@ -1,1 +1,1 @@
-# Restarant Business Ranking Analysis
+# Restaurant Business Ranking Analysis
