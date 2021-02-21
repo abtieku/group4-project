@@ -10,7 +10,7 @@ The purpose of this project is to find the most popular restaurants across citie
 
 ## Data Cleaning and Analysis
 
-Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
+Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using PySpark.
 
 ## Database Storage
 
