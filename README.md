@@ -4,7 +4,7 @@ The purpose of this project is to find the most popular restaurants across citie
 
 ## Communication Protocols
 
-```Zoom``` and ```Slack``` are the communication platforms used for discussion on the project. Weekly meetings are conducted to assign project tasks, decide on technologies to be used and solve any challengences encountered during the process.
+```Zoom``` and ```Slack``` are the communication platforms used for discussion on the project. Weekly meetings are conducted to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
 
 ## Technologies Used
 
