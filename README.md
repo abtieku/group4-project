@@ -37,7 +37,7 @@ The Datset contains 5 different json data files out of which we are just taking 
 
 ## Questions to be answered with the data
 
-- Avg review per city per category
+- Average review per city per category
 - What is the percentage for positive and negative reviews per city per category
 - Top 5 restaurants in a City.
 - Train and evaluate various machine learning models to predict the machine learning model with the highest accuracy
