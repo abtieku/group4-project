@@ -32,7 +32,7 @@ With this project we can help people search the best restaurants in a particular
 
 The Datset contains 5 different json data files out of which we are just taking ```business.json``` and ```review.json``` files for our analysis. Rest of the data is out of scope for our analysis.
 
-- The ```business.json``` file contains business data including location data, attributes, categories and star ratings for the restaurant.
+- The ```business.json``` file contains business data including location data, attributes, categories and star ratings for the restaurants.
 - The ```review.json``` file contains review data including the user_id who wrote the reviews, the business_id  for which the review is written and the star reviews for each of the restaurant.
 
 ## Questions to be answered with the data
