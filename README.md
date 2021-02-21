@@ -1,6 +1,6 @@
 # Restaurant Business Analysis
 
-The purpose of this project is to find the most popular Restaurants across cities with regards to the review ratings provided by customers and also use different machine learning models to predict accuracy of customer review ratings.
+The purpose of this project is to find the most popular restaurants across cities with regards to the review ratings provided by customers and also use different machine learning models to predict accuracy of customer review ratings.
 
 ## Communication Protocols
 
