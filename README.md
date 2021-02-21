@@ -2,6 +2,10 @@
 
 The purpose of this project is to find the most popular restaurants across cities with regards to the review ratings provided by customers and also use different machine learning models to predict accuracy of customer review ratings.
 
+## Data Source
+
+[Link](https://www.yelp.com/dataset)
+
 ## Communication Protocols
 
 ```Zoom``` and ```Slack``` are the communication platforms used for discussion on the project. Weekly meetings are conducted to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
