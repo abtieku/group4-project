@@ -18,7 +18,7 @@ Pandas will be used to clean the data and perform an exploratory analysis. Furth
 
 ## Database Storage
 
-Postgres SQL is where data is stored and is hosted on th Google Cloud Platform.
+PostgreSQL is where data is stored and is hosted on th Google Cloud Platform.
 
 ## Machine Learning
 
