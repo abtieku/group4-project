@@ -1,5 +1,3 @@
--- possible error with forien key in join function
-
 CREATE TABLE business_table (
     business_id VARCHAR PRIMARY KEY,
     name VARCHAR NOT NULL,
