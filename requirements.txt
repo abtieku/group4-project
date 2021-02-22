@@ -1,0 +1,23 @@
+Restaurant Analysis Requirements
+
+Business Requirements
+Predict how well restaurants will do.
+
+Technical Requirements
+
+Dataset:
+Downloaded from Yelp
+
+Database:
+CSV files were loaded into Google Cloud and accessed through PG Admin.
+
+Machine Learning Model:
+TBD
+
+Interactive Element:
+
+Google Slides:
+
+Dashboard:
+
+
