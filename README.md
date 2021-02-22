@@ -22,7 +22,7 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ## Communication Protocols
 
-```Zoom``` and ```Slack``` are the communication platforms used for discussion on the project. Meetings are conducted almost daily to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
+Zoom and Slack are the communication platforms used for discussion on the project. Meetings are conducted almost daily to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
 
 ## Technologies Used
 
