@@ -1,49 +1,28 @@
-# Restaurant Business Analysis
-
-The purpose of this project is to find the most popular restaurants across cities with regards to the review ratings provided by customers and also use different machine learning models to predict accuracy of customer review ratings.
-
-## Data Source
-
-[Link](https://www.yelp.com/dataset)
-
 ## Communication Protocols
 
-```Zoom``` and ```Slack``` are the communication platforms used for discussion on the project. Weekly meetings are conducted to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
+ Zoom and Slack are the communication platforms used for discussion on the project. Meetings are conducted almost daily to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
 
-## Technologies Used
+ ## Technologies Used
+ Zoom and Slack are the communication platforms used for discussion on the project. Meetings are conducted several times a week to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
 
-## Data Cleaning and Analysis
+ ## Provisional Machine Learning Model
 
-Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using PySpark.
+ Python Libraries, PySpark and Google Collab will be used for machine learning. We will use a supervised learning model. See the xxx notebook for the provisional machine learning model. 
+ Python Libraries, PySpark and Google Collab will be used for machine learning. 
 
-## Database Storage
+ We will use a supervised learning model. In this example, we are experimenting with SMOTE. This is one of the models we will review before determining which one(s) we will use:
 
-PostgreSQL is where data is stored and is hosted on th Google Cloud Platform.
+ ![](./Resources/machine_learning.png) 
 
-## Machine Learning
+ ## Provisional Database 
 
-Python Libraries, PySpark and Google Colab will be used for NLP machine learning
+ @@ -40,6 +42,9 @@ Here is a sample of the review table data:
 
-## Dashboard
+ ![](./Resources/review_table.png) 
 
-Tableau is used to create interactive dashboards.
+ Here is the database schema:
+ ![](./Resources/schema.png) 
 
-## Reason why we selected our topic
+ ## Data Cleaning and Analysis
 
-With this project we can help people search the best restaurants in a particular category in a particular city.
-
-## Description of the source of data.
-
-The Datset contains 5 different json data files out of which we are just taking ```business.json``` and ```review.json``` files for our analysis. Rest of the data is out of scope for our analysis.
-
-- The ```business.json``` file contains business data including location data, attributes, categories and star ratings for the restaurants.
-- The ```review.json``` file contains review data including the user_id who wrote the reviews, the business_id  for which the review is written and the star reviews for each of the restaurant.
-
-## Questions to be answered with the data
-
-- Average review per city per category
-- What is the percentage for positive and negative reviews per city per category
-- Top 5 restaurants in a City.
-- Train and evaluate various machine learning models to predict the machine learning model with the highest accuracy
-
-
+ Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using PySpark.
