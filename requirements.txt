@@ -1,23 +1,27 @@
 Restaurant Analysis Requirements
 
-Business Requirements
-Predict how well restaurants will do.
 
-Technical Requirements
+Goal:
+Predict Star Rating/Popularity of restaurants.
 
-Dataset:
-Downloaded from Yelp
+Technical Requirements:
 
-Database:
-CSV files were loaded into Google Cloud and accessed through PG Admin.
+1 Dataset:
+  Downloaded from Yelp https://www.yelp.com/dataset
 
-Machine Learning Model:
-TBD
+2 Database:
+  Google Cloud Hosted Postgres Server
 
-Interactive Element:
+3 Python3 interpreter or jupyter notbeooks
 
-Google Slides:
+4 Machine Learning Model:
+  TBD
 
-Dashboard:
+5 Interactive Element:
+  Map of all restaurants based on categories/attributes
+
+6 Google Slides:
+
+7 Dashboard:
 
 
