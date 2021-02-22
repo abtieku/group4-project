@@ -16,11 +16,12 @@
 
  ## Provisional Database 
 
- @@ -40,6 +42,9 @@ Here is a sample of the review table data:
+ Here is a sample of the review table data:
 
  ![](./Resources/review_table.png) 
 
  Here is the database schema:
+ 
  ![](./Resources/schema.png) 
 
  ## Data Cleaning and Analysis
