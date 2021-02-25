@@ -1,3 +1,4 @@
+![image](https://github.com/abtieku/group4-project/blob/main/Resources/Restaurant.jpg)
 # Restaurant Business Analysis
 
 The purpose of this project is to find the most popular restaurants across cities with regards to the review ratings provided by customers, and to use different machine learning models to predict the accuracy of customer review ratings.
@@ -22,7 +23,7 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ## Communication Protocols
 
-Zoom and Slack are the communication platforms used for discussion on the project. Meetings are conducted several times a week to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
+```Zoom``` and ```Slack``` are the communication platforms used for discussion on the project. Meetings are conducted several times a week to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
 
 ## Provisional Machine Learning Model
 
