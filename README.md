@@ -27,6 +27,8 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ## Provisional Machine Learning Model
 
+https://github.com/abtieku/group4-project/tree/main/Machine_Learning
+
 Python Libraries, PySpark and Google Collab will be used for machine learning. 
 
 We will use a supervised learning model. In this example, we are experimenting with SMOTE. This is one of the models we will review before determining which one(s) we will use:
