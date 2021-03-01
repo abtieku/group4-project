@@ -10,7 +10,7 @@ The Metrics created for analysis of this project are visualized to create report
 - Calculated fields are created.
 - URL Action for viewing the results per State.
 
-# Visualization
+## Visualization
 
 [Link to Visualization](https://public.tableau.com/profile/shanu.joseph#!/vizhome/RestaurantBusinessAnalysis/Story1?publish=yes)
 
