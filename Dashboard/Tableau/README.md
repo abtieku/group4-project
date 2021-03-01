@@ -1,4 +1,4 @@
-# Restaurant Analysis Dashboard
+# Restaurant Business Analysis Dashboard
 
 ## Description of the tool(s) that will be used to create the final dashboard
 
