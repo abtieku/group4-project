@@ -33,15 +33,22 @@ We have been entertaining the idea of incorporating a Neural Network to predict 
  
  
 ## Database
- 
-We extracted restaurants out of the business data json file, and here is a sample of that table:
- 
-![](./Resources/yelp_restaurants.png)
- 
- 
-Here is the database schema:
-![](./Resources/schema.png)
- 
+
+Google Cloud and Postgres is being used to house our server
+
+### server
+![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/server.png)
+
+### tables
+![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/tables.png)
+
+### data
+![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/data.png)
+
+Shema and README.md provided below
+
+[Database Group 4](https://github.com/abtieku/group4-project/tree/main/Database)
+
 ## Data Cleaning and Analysis
  
 Python Pandas,sklearn, and tensorflow libraries will be used to clean the data,perform an exploratory analysis, and build our Machine learning models.
