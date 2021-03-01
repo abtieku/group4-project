@@ -14,5 +14,7 @@ The Metrics created for analysis of this project are visualized to create report
 
 [Link to Visualization](https://public.tableau.com/profile/shanu.joseph#!/vizhome/RestaurantBusinessAnalysis/Story1?publish=yes)
 
+[Google Slides](https://docs.google.com/presentation/d/1nr6JvIkOD3UAjcMgdsePUiV51nl8bSs3Si4AMYdGYho/edit#slide=id.gc14ac822ce_1_40)
+
 
 
