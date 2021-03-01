@@ -2,12 +2,21 @@
 
 ## Data Preprocessing
 - Downloaded data set from yelp
+
+![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/raw_json.png?raw=True)
+
 - utilized pandas for ETL process
 
 - reduced dataset to only hold businesses marked as Restaurants
 
 - Using Pandas, Postgres, and Google Cloud we created two DataFrames, business dataframe and attributes dataframe
 as well as two corresponding tables in Postgres named business_table and attributes_table
+
+### Business Dataframe
+![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/business_df.png?raw=True)
+
+### Attributes Dataframe
+![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/attributes_df.png?raw=True)
 
 - Inspected Data types, value counts, and null values
 
