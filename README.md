@@ -27,7 +27,7 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ## Provisional Machine Learning Model
 
-https://github.com/abtieku/group4-project/tree/main/Machine_Learning
+[Link to Folder](https://github.com/abtieku/group4-project/tree/main/Machine_Learning)
 
 Python Libraries, PySpark and Google Collab will be used for machine learning. 
 
@@ -59,3 +59,5 @@ PostgreSQL is where data is stored and is hosted on the Google Cloud Platform.
 ## Dashboard
 
 Tableau will be used to create interactive dashboards.
+
+[Link to Folder](https://github.com/abtieku/group4-project/tree/shanu_segment2/Dashboard/Tableau)
