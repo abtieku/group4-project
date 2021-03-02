@@ -1,6 +1,9 @@
 #large data files directory
 data
 
+#db_password
+Flask_Application/sql_config.py
+
 #postgre config
 Machine_Learning/ML_and_DataCleaning_notebooks/sql_config.py
 
