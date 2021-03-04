@@ -1,8 +1,11 @@
 #large data files directory
 data
 
+#db_password
+Flask_Application/sql_config.py
+
 #postgre config
-seb_branch/notebooks_and_python_scripts/sql_config.py
+Machine_Learning/ML_and_DataCleaning_notebooks/sql_config.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
