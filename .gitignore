@@ -1,6 +1,12 @@
 #large data files directory
 data
 
+
+
+#Leaflet api key
+Flask_Application/static/js/config.js
+
+
 #db_password
 Flask_Application/sql_config.py
 

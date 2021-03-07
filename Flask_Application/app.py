@@ -4,10 +4,27 @@ from flask_ngrok import run_with_ngrok
 from connect_sql_db import build_engine
 import os
 
+
+#testing df
+df = pandas.read_csv("C:\\Users\\secam\\Downloads\\merged_table_1.csv",low_memory = False)
+
+df = df.loc[df.state == "CA"]
+
+
+lat_lng = {
+    "name": df["name"].tolist(), 
+    "lat":df["latitude"].tolist(),
+    "lng":df["longitude"].tolist()
+}
+
 app = Flask(__name__)
 
 run_with_ngrok(app)
 
 @app.route('/', methods=["GET","POST"])
 def first_page():
-    return render_template("homepage.html")
+    return render_template("homepage.html", latLng=lat_lng)
+
+
+if __name__ == "__main__":
+    app.run()
