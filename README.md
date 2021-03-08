@@ -29,9 +29,9 @@ We have been entertaining the idea of incorporating a Neural Network to predict 
 [Machine Learning Group 4](https://github.com/abtieku/group4-project/tree/main/Machine_Learning)
 
 
-## Database
+## Database Storage
 
-Google Cloud and Postgres are being used to house our server.
+PostgreSQL is where data is stored and is hosted on the Google Cloud Platform. 
 
 ### Server
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/server.png)
@@ -42,17 +42,13 @@ Google Cloud and Postgres are being used to house our server.
 ### Data
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/data.png)
 
-Shema and README.md provided below
+Schema and README.md provided below:
 
 [Database Group 4](https://github.com/abtieku/group4-project/tree/main/Database)
 
 ## Data Cleaning and Analysis
 
-Python Pandas, sklearn, and tensorflow libraries will be used to clean the data,perform an exploratory analysis, and build our Machine learning models.
-
-## Database Storage
-
-PostgreSQL is where data is stored and is hosted on the Google Cloud Platform. SQL Alchemy is used to connect to the database.
+Python Pandas, sklearn, and tensorflow libraries will be used to clean the data, perform an exploratory analysis, and build our Machine Learning models.
 
 ## Requirements.txt
 We set up a requirements.txt file in the main folder. This file contains what packages and libraries are needed to successfully run the code.
