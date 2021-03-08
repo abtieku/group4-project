@@ -21,8 +21,8 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 - What Features makes a Restaurant successful
 - Can we accurately predict the success of a restaurant given these features
-- What is the percentage for positive and negative reviews per city per category?
-- What are the top 5 restaurants in a city?
+- What is the percentage for positive and negative reviews per state per category?
+- What are the top 5 restaurants in a state?
 - Can we accurately classify a restaurant by star rating given these features
 
 ## Communication Protocols
