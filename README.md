@@ -1,12 +1,17 @@
 ![image](https://github.com/abtieku/group4-project/blob/main/Resources/Restaurant.jpg)
-# Restaurant Business Analysis
+# Restaurant Ratings Analysis
 
-This project will use Machine Learning Algorithms and Models to predict the success of a Restaurant based on features including location, ambience, food, etc.
+Our selected topic is restaurants and their star ratings. We want to be able to predict the star rating of the restaurant based on various attributes such as:
 
+- Price
+- Noise Level
+- Whether it Serves Alcohol or Not
+- Restaurant Attire
+- Other
 
 ## Reason Why We Selected Our Topic
 
-With this project, we want to be able to help people search the best restaurants in a particular category in a particular city.
+Our reason for this topic is that some restaurants may not have many ratings yet, and we want to be able to help people find the best restaurants.
 
 ## Description of the Source of Data
 
@@ -15,34 +20,32 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ## Questions to be Answered With the Data
 
-- What Features makes a Restaurant successful
-- Can we accurately predict the success of a restaurant given these features
-- What is the percentage for positive and negative reviews per city per category?
-- What are the top 5 restaurants in a city?
-- Can we accurately classify a restaurant by star rating given these features
+- What features make a restaurant successful?
+- Can we accurately classify a restaurant by star rating given these features? 
+- Can we accurately predict the success of a restaurant given these features?
 
 ## Communication Protocols
 
 ```Zoom``` and ```Slack``` are the communication platforms used for discussion on the project. Meetings are conducted several times a week to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
 
-## Provisional Machine Learning Model
+## Machine Learning Model
 
-We have been entertaining the idea of incorporating a Neural Network to predict the star rating of a restaurant based on features such as food served, noise level, location etc. The second viable option in mind is to create a model predicting the success of a restaurant based on these same features or attributes utilizing a polynomial linear regression. Information for Both Models as well as a README.md is located in the link provided below
+We have been entertaining the idea of incorporating a Neural Network to predict the star rating of a restaurant based on features such as food served, noise level, location etc. The second viable option in mind is to create a model predicting the success of a restaurant based on these same features or attributes utilizing a polynomial linear regression. Information for both models as well as a README.md is located in the link provided below.
 
 [Machine Learning Group 4](https://github.com/abtieku/group4-project/tree/main/Machine_Learning)
 
 
 ## Database
 
-Google Cloud and Postgres is being used to house our server
+Google Cloud and Postgres are being used to house our server.
 
-### server
+### Server
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/server.png)
 
-### tables
+### Tables
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/tables.png)
 
-### data
+### Data
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/data.png)
 
 Shema and README.md provided below
@@ -51,18 +54,23 @@ Shema and README.md provided below
 
 ## Data Cleaning and Analysis
 
-Python Pandas,sklearn, and tensorflow libraries will be used to clean the data,perform an exploratory analysis, and build our Machine learning models.
+Python Pandas, sklearn, and tensorflow libraries will be used to clean the data,perform an exploratory analysis, and build our Machine learning models.
 
 ## Database Storage
 
-PostgreSQL is where data is stored and is hosted on the Google Cloud Platform.
+PostgreSQL is where data is stored and is hosted on the Google Cloud Platform. SQL Alchemy is used to connect to the database.
 
 ## Requirements.txt
-We set up a requirements.txt file in the root folder. This file contains what packages and libraries are needed to successfully run the code.
+We set up a requirements.txt file in the main folder. This file contains what packages and libraries are needed to successfully run the code.
 
 ## Dashboard
 
-Tableau will be used to create interactive dashboards.
+Tableau will be used to create interactive dashboards. The interactive elements include being able to select or de-select 10 states in these charts:
+
+- Top locations
+- Restaurant categories (American Traditional, Italian, Japanese, etc) 
+- Restaurant categories with review ratings
+- Attributes contributing to review ratings
 
 [Link to Tableau Visualization](https://public.tableau.com/profile/shanu.joseph#!/vizhome/RestaurantBusinessAnalysis/Story1?publish=yes)
 
