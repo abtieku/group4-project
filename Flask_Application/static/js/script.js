@@ -22,7 +22,7 @@ for (let i =0, size = latLng["lat"].length; i < size ; i++) {
     var marker = new L.marker([parseFloat(latLng["lat"][i]), parseFloat(latLng["lng"][i])]);
     marker.addTo(map);
     // Adding pop-up to the marker
-    marker.bindPopup( "<h3>"+ latLng["state"][i] +" "+ latLng['name'][i] + "</h3><b></b><h4>" + latLng["review_count"][i]).openPopup();
+    marker.bindPopup( "<h3>"+ latLng["state"][i] +" "+ latLng['name'][i] + "</h3><b></b><h4>review count: " + latLng["review_count"][i]).openPopup();
 };
 
 
