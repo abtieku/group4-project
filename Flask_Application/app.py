@@ -81,7 +81,7 @@ def first_page():
         "homepage.html",
         latLng=lat_lng,
         categories=categories,
-        table = df2[["name","state","stars","review_count"]].sort_values("review_count", ascending = False).to_html(table_id="dataframe"),
+        table = df2[["name","state","stars","review_count"]].sort_values("review_count", ascending = False).set_index("name").to_html(table_id="dataframe"),
         state_count = df2.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False).to_html(table_id="state_count"), 
         category_2="select category",
         states=list(set(df2.state.tolist())),
