@@ -41,12 +41,19 @@ def first_page():
         state = request.form["state"]
 
         if state != "all":
-            df = df_1.loc[df_1.state == state]
+            df = df_1.loc[df_1.state == state].dropna(how="any", inplace=True)
         
-        if state == "all":
-            df = df_1.copy()
+        elif state == "all":
+            df = df_1.copy().dropna(how="any", inplace=True)
 
-        df2 = df.loc[df[request.form["category"]] == 1]
+
+        selection = request.form["category"]
+
+        print(state)
+        print(selection)
+        
+        df2 = df.loc[df[selection] == 1]
+        
         category = request.form["category"]
 
         lat_lng = {
@@ -58,11 +65,15 @@ def first_page():
 
         }
 
-        pprint(lat_lng)
+        foo = pandas.DataFrame(lat_lng)
+
+        print(foo.head())
+
+        print(foo.count())
 
         table = df2.copy()
 
-        selection = request.form["category"]
+        
 
 
 
