@@ -5,7 +5,7 @@
 
 - Find the most popular restaurants across different states in US with regards to the review ratings provided by customers.
 - Use different machine learning models to predict the star rating and success of a restaurant based on restaurant attributes such as food served, noise level, delivery, takeout, price range etc. 
-- Train and evaluate different machine learning models to predict the model with the highest accuracy.
+- Train and evaluate different machine learning models to predict the model with the highest accuracy score.
 
 ## Reason Why We Selected Our Topic
 
