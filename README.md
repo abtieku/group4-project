@@ -1,13 +1,7 @@
 ![image](https://github.com/abtieku/group4-project/blob/main/Resources/Restaurant.jpg)
 # Restaurant Ratings Analysis
 
-Our selected topic is restaurants and their star ratings. We want to be able to predict the star rating of the restaurant based on various attributes such as:
-
-- Price
-- Noise Level
-- Whether it Serves Alcohol or Not
-- Restaurant Attire
-- Other
+This project will use Machine Learning Algorithms and models to predict the star rating of a restaurant based on features such as food served, noise level, location, price range etc and also predict the success of a restaurant based on its features. Different Machine Learning models are trained and evaluated to predict the model with the highest accuracy.
 
 ## Reason Why We Selected Our Topic
 
