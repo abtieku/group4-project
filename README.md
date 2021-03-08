@@ -1,7 +1,7 @@
 ![image](https://github.com/abtieku/group4-project/blob/main/Resources/Restaurant.jpg)
 # Restaurant Business Analysis
 
-## Purpose of the project 
+## Purpose of the Project 
 
 - Find the most popular restaurants across different States in US with regards to the review ratings provided by customers.
 - Use different machine learning models to predict the star rating and success of a restaurant based on restaurant attributes such as food served, noise level, location, price range etc. 
