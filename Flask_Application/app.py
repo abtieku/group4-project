@@ -5,31 +5,22 @@ from connect_sql_db import build_engine
 import os
 import time
 
-
-#testing df
-
-
 engine = build_engine(database_name="database1",host="35.225.193.21")
 
 app = Flask(__name__)
 
 run_with_ngrok(app)
 
-df = pandas.read_sql("select * from cleaned_table", con=engine)
-
-
-
-
-
+df_1 = pandas.read_sql("select * from cleaned_table", con=engine)
 
 @app.route('/', methods=["GET","POST"])
 def first_page():
 
-    df = pandas.read_sql("select * from cleaned_table", con=engine)
+    df = df_1.copy()
 
     df.dropna(how="any", inplace=True)
 
-    categories = df.columns.tolist()
+    categories = df.drop(["address","city","state","business_id","city", "postal_code","latitude","longitude","stars","review_count","name"],axis=1).columns.tolist()
 
     lat_lng = {
         "state":df["state"].tolist(),
@@ -46,8 +37,18 @@ def first_page():
     df.dropna(how="any", inplace=True)
 
     if request.method == "POST":
+
+        state = request.form["state"]
+
+        if state != "all":
+            df = df.loc[df.state == state]
         
+        if state == "all":
+            df = df_1.copy()
+
         df2 = df.loc[df[request.form["category"]] == 1]
+        category = request.form["category"]
+
         lat_lng = {
             "state":df2["state"].tolist(),
             "name": df2["name"].tolist(), 
@@ -57,11 +58,35 @@ def first_page():
 
         }
 
-        print(lat_lng)
-        
-        return render_template("homepage.html", latLng=lat_lng, categories=categories)
+        table = df2.copy()
 
-    return render_template("homepage.html", latLng=lat_lng, categories=categories)
+        selection = request.form["category"]
+
+
+
+        return render_template(
+            "homepage.html", 
+            latLng=lat_lng, 
+            categories=categories, 
+            table = table[["name","state","stars","review_count",category]].sort_values("review_count", ascending=False).set_index("name").to_html(table_id="dataframe"), 
+            state_count = table.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False).to_html(table_id="state_count"),
+            category_2=selection, 
+            states=list(set(df_1.state.tolist())),
+            state_2="all"
+        )
+
+    df2 = df_1.copy()
+
+    return render_template(
+        "homepage.html",
+        latLng=lat_lng,
+        categories=categories,
+        table = df2[["name","state","stars","review_count"]].sort_values("review_count", ascending = False).to_html(table_id="dataframe"),
+        state_count = df2.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False).to_html(table_id="state_count"), 
+        category_2="select category",
+        states=list(set(df2.state.tolist())),
+        state_2="all"
+    )
 
 
 

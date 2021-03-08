@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
      <!-- Our CSS -->
@@ -14,23 +22,47 @@
 </head>
 <body>
     <h1>Home Page</h1>
-    <h2>Categories</h2>
+    <h2>Map</h2>
     <form action='#' method="POST">
+        <div class="form-group">
         <select name="category" id="category" style="width:200px;">
+            <option value="{{ category_2 }}">{{ category_2 }}</option>
             {% for category in categories %}
             <option value="{{ category }}">{{ category }}</option>
             {% endfor %}
         </select>
-        <button class="center btn btn-primary" type="submit" value="Submit">Submit</button>
+        </div>
+        <div class="form-group">
+            <select name="state" id="state" style="width:200px;">
+                <option value="{{ state_2 }}">{{ state_2 }}</option>
+                {% for state in states %}
+                <option value="{{ state }}">{{ state }}</option>
+                {% endfor %}
+            </select>    
+        </div>
+            <button class="center btn btn-primary" type="submit" value="Submit">Submit</button>
+        </div>
+    
     </form>
-    <div id="mapid">
-        <h2>Map</h2>
+    <div id="mapid" class="center_map">
     </div>
-    <div id="visualisation1">
-        <h2>Visualization 1</h2>
-    </div>
-    <div id="visualisation2">
-        <h2>Visualisation2</h2>
+    <div class="container">
+        <div id="table_1" class="float-left">
+            <table id="state_count">
+                {{ state_count | safe }}
+            </table>
+        </div>
+        <div class="float-right">
+            <table id="dataframe" >
+                {{table | safe}}
+            </table>
+        </div>
+        <!-- <div id="visualisation1">
+            <h2>Visualization 1</h2>
+        </div>
+        <div id="visualisation2">
+            <h2>Visualisation2</h2>
+        </div> -->
     </div>
 
 </body>
@@ -42,4 +74,5 @@ crossorigin=""></script>
 <script type="text/javascript" src="static/js/config.js"></script>
 <!-- script -->
 <script type="text/javascript" src="static/js/script.js"></script>
+
 </html>
