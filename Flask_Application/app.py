@@ -30,7 +30,7 @@ def first_page():
     df.dropna(how="any", inplace=True)
 
 
-    df2 = df_1.copy()
+    df2 = df.copy()
     
     if request.method == "POST":
         state = request.form["state"]
@@ -54,9 +54,8 @@ def map():
     if answer == "True":
         
         state = request.args.get("state")
-        print(state)
         if state != "all":
-            df2 = df_1.loc[df_1.state == state].dropna(how="any")
+            df2 = df_1.loc[df_1.state == state].dropna(how="any").copy()
         
         elif state == "all":
             df2 = df_1.copy().dropna(how="any")
@@ -75,7 +74,7 @@ def map():
 
         }
 
-        categories = df_1.drop(["address","city","state","business_id","city", "postal_code","latitude","longitude","stars","review_count","name"],axis=1).columns.tolist()
+        categories = df2.drop(["address","city","state","business_id","city", "postal_code","latitude","longitude","stars","review_count","name"],axis=1).columns.tolist()
 
         if request.method == "POST":
             state = request.form["state"]
