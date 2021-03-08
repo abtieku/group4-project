@@ -25,7 +25,7 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ```Zoom``` and ```Slack``` are the communication platforms used for discussion on the project. Meetings are conducted several times a week to assign project tasks, decide on technologies to be used and solve any challenges encountered during the process.
 
-## Provisional Machine Learning Model
+## Machine Learning Model
 
 We have been entertaining the idea of incorporating a Neural Network to predict the star rating of a restaurant based on features such as food served, noise level, location etc. The second viable option in mind is to create a model predicting the success of a restaurant based on these same features or attributes utilizing a Logistic regression. Information for Both Models as well as a README.md is located in the link provided below
 
