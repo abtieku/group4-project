@@ -1,8 +1,11 @@
 ![image](https://github.com/abtieku/group4-project/blob/main/Resources/Restaurant.jpg)
 # Restaurant Business Analysis
 
-This project will use Machine Learning Algorithms and models to predict the star rating of a restaurant based on features such as food served, noise level, location, price range etc and also predict the success of a restaurant based on its features. Different Machine Learning models are trained and evaluated to predict the model with the highest accuracy.
+## Purpose of the project 
 
+- Find the most popular restaurants across different States in US with regards to the review ratings provided by customers.
+- Use different machine learning models to predict the star rating and success of a restaurant based on restaurant attributes such as food served, noise level, location, price range etc. 
+- Train and evaluate different machine learning models to predict the model with the highest accuracy.
 
 ## Reason Why We Selected Our Topic
 
@@ -11,6 +14,7 @@ With this project, we want to be able to help people search the best restaurants
 ## Description of the Source of Data
 
 The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 different json data files out of which we are just taking the ```business.json```
+
 - The ```business.json``` file contains business data including location data, attributes, categories and star ratings for the restaurants.
 
 ## Questions to be Answered With the Data
