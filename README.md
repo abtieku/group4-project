@@ -65,5 +65,6 @@ Dashboards provided in the link below
  
 [Tableau Dashboards Group 4](https://github.com/abtieku/group4-project/tree/shanu_segment2/Dashboard/Tableau)
  
-
+#### Interactive map
+ [Group 4 Interactive Map](https://groupfour.ngrok.io)
 
