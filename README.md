@@ -71,6 +71,9 @@ Tableau will be used to create interactive dashboards.
 [Link to Tableau Visualization](https://public.tableau.com/profile/shanu.joseph#!/vizhome/RestaurantBusinessAnalysis/Story1?publish=yes)
 
 [Tableau Dashboards Group 4](https://github.com/abtieku/group4-project/tree/shanu_segment2/Dashboard/Tableau)
+ 
+#### Interactive map
+ [Group 4 Interactive Map](https://groupfour.ngrok.io)
 
 
 ## Google Slides
