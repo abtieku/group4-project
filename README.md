@@ -27,14 +27,14 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ## Provisional Machine Learning Model
 
-We have been entertaining the idea of incorporating a Neural Network to predict the star rating of a restaurant based on features such as food served, noise level, location etc. The second viable option in mind is to create a model predicting the success of a restaurant based on these same features or attributes utilizing a polynomial linear regression. Information for Both Models as well as a README.md is located in the link provided below
+We have been entertaining the idea of incorporating a Neural Network to predict the star rating of a restaurant based on features such as food served, noise level, location etc. The second viable option in mind is to create a model predicting the success of a restaurant based on these same features or attributes utilizing a Logistic regression. Information for Both Models as well as a README.md is located in the link provided below
 
 [Machine Learning Group 4](https://github.com/abtieku/group4-project/tree/main/Machine_Learning)
 
 
 ## Database
 
-Google Cloud and Postgres is being used to house our server
+Google Cloud and Postgres is being used to host our server
 
 ### server
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/server.png)
@@ -45,7 +45,7 @@ Google Cloud and Postgres is being used to house our server
 ### data
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/data.png)
 
-Shema and README.md provided below
+Schema and README.md provided below
 
 [Database Group 4](https://github.com/abtieku/group4-project/tree/main/Database)
 
