@@ -2,6 +2,7 @@ import pandas
 from flask import Flask, redirect, url_for, request, render_template
 from flask_ngrok import run_with_ngrok
 from connect_sql_db import build_engine
+from pprint import pprint
 import os
 import time
 
@@ -56,6 +57,8 @@ def first_page():
             "review_count": df2["review_count"].tolist()
 
         }
+
+        pprint(lat_lng)
 
         table = df2.copy()
 
