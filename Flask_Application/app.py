@@ -32,7 +32,6 @@ def first_page():
     }
 
 
-    df = pandas.read_sql("select * from cleaned_table", con=engine)
 
     df.dropna(how="any", inplace=True)
 
@@ -41,7 +40,7 @@ def first_page():
         state = request.form["state"]
 
         if state != "all":
-            df = df.loc[df.state == state]
+            df = df_1.loc[df_1.state == state]
         
         if state == "all":
             df = df_1.copy()
