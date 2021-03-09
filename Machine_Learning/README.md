@@ -42,7 +42,7 @@ as well as two corresponding tables in Postgres named business_table and attribu
  
 # Machine Learning preliminary Models
  
-## Polynomial linear regression
+## Logistic Regression regression
  
 - work in progress
  
@@ -78,7 +78,7 @@ This model was chosen for its ability to classify a target column and improve pr
 ## Classification Report
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/model_classification_report.png?raw=True)
  
-Our classification report shows an unfortunately low accuracy to predict the correct star rating for Restaurants. We will attempt to create a polynomial linear regression model to predict the success of the restaurant.
+Our classification report shows an unfortunately low accuracy to predict the correct star rating for Restaurants. We will attempt to create a logistic model and oversampling to predict the success of the restaurant.
  
  
  
