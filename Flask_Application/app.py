@@ -38,7 +38,6 @@ def first_page():
 
         return redirect(url_for("map",change_me="True",state=state,selection=selection,code=302,response=200,_scheme="https",_external=True))    
     
-    print("df",df)
 
 
 
@@ -47,7 +46,7 @@ def first_page():
         latLng=lat_lng,
         categories=categories,
         df = df[["name","state","stars","review_count"]].sort_values("review_count", ascending = False),
-        state_count = df.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False).to_html(table_id="state_count"), 
+        state_count = df.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False), 
         category_2="select category",
         states=list(set(df_main.state.tolist())),
         state_2="all"
@@ -70,10 +69,6 @@ def map():
         if selection != "select category":
             df2 = df2.loc[df2[selection] == 1]
             
-        print(state)
-        print(selection)
-        
-        print("df2",df2)
 
         lat_lng = {
             'state':df2["state"].tolist(),
@@ -90,17 +85,15 @@ def map():
         if request.method == "POST":
             state = request.form["state"]
             selection = request.form["category"]
-
             return redirect(url_for("map",change_me="True",state=state,selection=selection,code=302,response=200,_scheme="https",_external=True))    
     
     
-
     return render_template(
         "homepage.html",
         latLng=lat_lng,
         categories=categories,
-        df = df2[["name","state","stars","review_count"]].sort_values("review_count", ascending = False).set_index("name"),
-        state_count = df2.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False).to_html(table_id="state_count"), 
+        df = df2[["name","state","stars","review_count", selection]].sort_values("review_count", ascending = False),
+        state_count = df2.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False), 
         category_2=selection,
         states=list(set(df_main.state.tolist())),
         state_2=state
