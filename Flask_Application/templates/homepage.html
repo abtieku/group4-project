@@ -61,9 +61,11 @@
                 </tr>
                 {% for row in df.iterrows() %}
                     <tr>
-                        {% for x in row %}
-                            <td>{{ row[0] }}</td>
-                        {% endfor %}
+                        <td>{{ row[1][0] }}</td>
+                        <td>{{ row[1][1] }}</td>
+                        <td>{{ row[1][2] }}</td>
+                        <td>{{ row[1][3] }}</td>
+                        <td>{{ row[1][4] }}</td>
                     </tr>
                 {% endfor %}
             </table>

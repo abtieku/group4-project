@@ -25,7 +25,8 @@ def first_page():
         'name': df["name"].tolist(), 
         'lat':df["latitude"].tolist(),
         'lng':df["longitude"].tolist(),
-        'review_count': df["review_count"].tolist()
+        'review_count': df["review_count"].tolist(),
+        "stars": df["stars"].tolist()
     }
     df.dropna(how="any", inplace=True)
 
@@ -56,7 +57,6 @@ def map():
     df_1 = df_main.copy()
     answer = request.args.get("change_me")
     if answer == "True":
-        
         state = request.args.get("state")
         if state != "all":
             df2 = df_1.loc[df_1.state == state].dropna(how="any").copy()
@@ -66,7 +66,6 @@ def map():
         
         
         selection = request.args.get("selection")
-        
         
         if selection != "select category":
             df2 = df2.loc[df2[selection] == 1]
@@ -81,7 +80,8 @@ def map():
             'name': df2["name"].tolist(), 
             'lat':df2["latitude"].tolist(),
             'lng':df2["longitude"].tolist(),
-            'review_count': df2["review_count"].tolist()
+            'review_count': df2["review_count"].tolist(),
+            "stars": df2["stars"].tolist()
 
         }
 
