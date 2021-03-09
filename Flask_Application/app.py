@@ -1,5 +1,5 @@
 import pandas
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, Response, redirect, url_for, request, render_template, send_file
 from flask_ngrok import run_with_ngrok
 from connect_sql_db import build_engine
 from pprint import pprint
@@ -15,23 +15,32 @@ run_with_ngrok(app)
 
 df_main = pandas.read_sql("select * from cleaned_table", con=engine)
 
+lat_lng = {
+    'state':df_main["state"].tolist(),
+    'name': df_main["name"].tolist(), 
+    'lat':df_main["latitude"].tolist(),
+    'lng':df_main["longitude"].tolist(),
+    'review_count': df_main["review_count"].tolist(),
+    "stars": df_main["stars"].tolist()
+}
+
+for column in df_main.drop(["address","city","state","postal_code","latitude","longitude","stars","review_count","business_id","name"], axis = 1).columns:
+    lat_lng[column] = df_main[column].tolist()
+
+
+
+with open("json_data/data.json","w") as outfile:
+    json.dump(lat_lng, outfile)
+
+print("json written")
+
 @app.route('/', methods=["GET","POST"])
 def first_page():
     df_1 = df_main.copy()
     df = df_1.copy()
-    categories = df_main.drop(["address","city","state","business_id","city", "postal_code","latitude","longitude","stars","review_count","name"],axis=1).columns.tolist()
-    lat_lng = {
-        'state':df["state"].tolist(),
-        'name': df["name"].tolist(), 
-        'lat':df["latitude"].tolist(),
-        'lng':df["longitude"].tolist(),
-        'review_count': df["review_count"].tolist(),
-        "stars": df["stars"].tolist()
-    }
+    categories = ["all"] + df_main.drop(["address","city","state","business_id","city", "postal_code","latitude","longitude","stars","review_count","name"],axis=1).columns.tolist()
+
     df.dropna(how="any", inplace=True)
-
-
-    
     if request.method == "POST":
         state = request.form["state"]
         selection = request.form["category"]
@@ -43,14 +52,14 @@ def first_page():
 
     return render_template(
         "homepage.html",
-        latLng=lat_lng,
         categories=categories,
         df = df[["name","state","stars","review_count"]].sort_values("review_count", ascending = False),
         state_count = df.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False), 
         category_2="select category",
-        states=list(set(df_main.state.tolist())),
-        state_2="all"
+        states=["all"] + list(set(df_main.state.tolist())),
+        state_2="all",
     )
+
 @app.route('/map', methods=["GET","POST"])
 def map():
     df_1 = df_main.copy()
@@ -66,19 +75,14 @@ def map():
         
         selection = request.args.get("selection")
         
-        if selection != "select category":
+        if selection != "select category" and selection != "all" and selection != "all categories":
             df2 = df2.loc[df2[selection] == 1]
-            
-
-        lat_lng = {
-            'state':df2["state"].tolist(),
-            'name': df2["name"].tolist(), 
-            'lat':df2["latitude"].tolist(),
-            'lng':df2["longitude"].tolist(),
-            'review_count': df2["review_count"].tolist(),
-            "stars": df2["stars"].tolist()
-
-        }
+            df2[selection] = df2[selection].apply(lambda x: "True" if x == 1 else "False")
+            send_me = df2[["name","state","stars","review_count", selection]].sort_values("review_count", ascending = False)
+        else:
+            send_me = df2[["name","state","stars","review_count"]]
+            send_me["all"] = "all"
+            selection = "all categories"
 
         categories = df_main.drop(["address","city","state","business_id","city", "postal_code","latitude","longitude","stars","review_count","name"],axis=1).columns.tolist()
 
@@ -90,17 +94,24 @@ def map():
     
     return render_template(
         "homepage.html",
-        latLng=lat_lng,
-        categories=categories,
-        df = df2[["name","state","stars","review_count", selection]].sort_values("review_count", ascending = False),
+        categories=["all"] + categories,
+        df = send_me,
         state_count = df2.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False), 
         category_2=selection,
-        states=list(set(df_main.state.tolist())),
+        states=["all"] + list(set(df_main.state.tolist())),
         state_2=state
     )
 
 
-    
+
+@app.route("/tab_page")
+def page_2():
+    return render_template("page_2.html")
+
+
+@app.route("/json_data/data.json")
+def get_json():
+    return send_file("json_data/data.json")
 
 
 

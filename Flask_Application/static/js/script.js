@@ -3,7 +3,13 @@
 
 console.log("working");
 
-console.log(latLng);
+console.log(state);
+console.log(selection);
+
+if (selection == "all categories") {
+    selection = "all";
+};
+
 
 let map = L.map(
     'mapid', {
@@ -18,12 +24,62 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/t
 	accessToken: API_KEY
 });
 
-for (let i =0, size = latLng["lat"].length; i < size ; i++) {
-    var marker = new L.marker([parseFloat(latLng["lat"][i]), parseFloat(latLng["lng"][i])]);
-    marker.addTo(map);
-    // Adding pop-up to the marker
-    marker.bindPopup( "<h3>"+ latLng["state"][i] +" "+ latLng['name'][i] + "</h3><b></b><h4>review count: " + latLng["review_count"][i]+"<b></b><h4> Star Rating: "+ latLng["stars"][i] +"</h4>").openPopup();
+
+if (state == "all" && selection == "all") {
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+    console.log(data);
+    for (var i = 0; i < data["lat"].length; i++) {
+        {
+        var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+        marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+        marker.addTo(map)
+        }
+    }
+});
 };
 
+
+
+
+
+
+if (state == "all" && selection != "all" && selection != "select category") {
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+    console.log(data);
+    for (var i = 0; i < data["lat"].length; i++) {
+        if (data[selection][i] == 1) {
+        var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+        marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+        marker.addTo(map)
+        }
+    }
+});
+};
+
+if (selection == "all" && state != "all") {
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+        console.log(data);
+        for (var i = 0; i < data["lat"].length; i++) {
+            if (data["state"][i] == state) {
+            var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+            marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+            marker.addTo(map)
+            }
+        }
+    });
+};
+
+if (selection != "all" && state != "all") { 
+d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+    console.log(data);
+    for (var i = 0; i < data["lat"].length; i++) {
+        if (data["state"][i] == state && data[selection][i] == 1) {
+        var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+        marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+        marker.addTo(map)
+        }
+    }
+});
+};
 
 streets.addTo(map);
