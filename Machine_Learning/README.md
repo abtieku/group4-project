@@ -49,7 +49,7 @@ as well as two corresponding tables in Postgres named business_table and attribu
 ## Model Choice including limitations and benefits
 - Neural network is an alternative to all the models as it can handle non linear relationships and can handle messy data
 - Accuracy score was lower for neural compared to the two other models we used.
-## Logistic Regression regression
+## Logistic Regression
  
  Logistic regression classifier is used to predict whether a restaurant is successful or not
 - A new temporary column was added to hold data regarding whether the restaurant is successful or not
