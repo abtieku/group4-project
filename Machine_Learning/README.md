@@ -46,14 +46,19 @@ as well as two corresponding tables in Postgres named business_table and attribu
 - 
 -  
 # Machine Learning Models
-## Model Choice including limitations and benefits
-- Neural network is an alternative to all the models as it can handle non linear relationships and can handle messy data
-- Accuracy score was lower for neural compared to the two other models we used.
+
 ## Logistic Regression
+
+ Logistic regression is the appropriate regression analysis to conduct when the dependent variable is dichotomous (binary). Like all regression analyses, the logistic regression is a predictive analysis. Logistic regression is used to describe data and to explain the relationship between one dependent binary variable and one or more nominal, ordinal, interval or ratio-level independent variables.
  
- Logistic regression classifier is used to predict whether a restaurant is successful or not
+ Here in our analysis logistic regression classifier is used to predict whether a restaurant is successful or not. Attributes of restaurants are the independent variables and success of a restaurant is the dependent variable.
 - A new temporary column was added to hold data regarding whether the restaurant is successful or not
-- Label encoder was used to convert is_succesful column to numbers
+- Star rating of 4 and greater is defined to be a succesful restaurant and less than 4 is predicted to be unsuccesful.
+- Label encoder was used to convert ```is_successful``` column string value to (0 or 1).
+- ```is_successful``` is the target variable.
+- Fields containing text where dropped off
+- Model was trained,scaled,standartised and balanced accuracy score was computed
+- Finally a classication report is printed using the imbalanced_classification_report
 
  
 ## Neural network classifier
@@ -90,6 +95,8 @@ This model was chosen for its ability to classify a target column and improve pr
  
 Our classification report shows an unfortunately low accuracy to predict the correct star rating for Restaurants. We will attempt to create a logistic model and oversampling to predict the success of the restaurant.
  
- 
+## Model Choice including limitations and benefits
+- Neural network is an alternative to all the models as it can handle non linear relationships and can handle messy data
+- Accuracy score was lower for neural compared to the two other models we used.
  
 
