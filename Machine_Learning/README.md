@@ -39,12 +39,7 @@ as well as two corresponding tables in Postgres named business_table and attribu
 - Dropped Restaurants that were not located in the US
  
 - imported data frames from Pandas to the postgresql server hosted on the google cloud.
-
-## Description of how the data was split into training and testing
-
-
-- 
--  
+ 
 # Machine Learning Models
 
 ## Logistic Regression
