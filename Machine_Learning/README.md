@@ -39,12 +39,22 @@ as well as two corresponding tables in Postgres named business_table and attribu
 - Dropped Restaurants that were not located in the US
  
 - imported data frames from Pandas to the postgresql server hosted on the google cloud.
- 
-# Machine Learning preliminary Models
- 
+
+## Description of how the data was split into training and testing
+
+
+- 
+-  
+# Machine Learning Models
+## Model Choice including limitations and benefits
+- Neural network is an alternative to all the models as it can handle non linear relationships and can handle messy data
+- Accuracy score was lower for neural compared to the two other models we used.
 ## Logistic Regression regression
  
-- work in progress
+ Logistic regression classifier is used to predict whether a restaurant is successful or not
+- A new temporary column was added to hold data regarding whether the restaurant is successful or not
+- Label encoder was used to convert is_succesful column to numbers
+
  
 ## Neural network classifier
  
