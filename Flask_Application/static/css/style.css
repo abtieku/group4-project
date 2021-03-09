@@ -6,7 +6,9 @@ body,
   width: 75%;
   height: 75%;
 }
-
+body {
+  background-color: darkslateblue;
+}
 .center_map {
   margin: auto;
   width: 50%;
@@ -14,22 +16,35 @@ body,
   padding: 10px;
 }
 
+.jumbotron {
+  width: 100%;
+  background-size: cover;
+  padding: 20px 
+}
+
 .float-left {
   width: 30%;
   float: left;
-  float: bottom;
-  padding: 20px;
+  /*float: bottom;*/
+  padding: 10px;
 }
 
 .float-right {
-  width: 70%;
-  float: right;
-  padding: 20px;
+  width: 60%;
+  float: left;
+  padding: 10px;
 } 
 
-table {
-  width: 100%;
+.table_1 {
+  width: 55%;
   display:block;
+  background-color: whitesmoke;
+}
+
+.table_2 {
+  width: 90%;
+  display:block;
+  background-color: whitesmoke;
 }
 thead {
   display: inline-block;
@@ -49,4 +64,12 @@ td, th {
   padding: 8px;
 }
 
-
+.text_black{
+  color: white;
+  text-shadow:
+  3px 3px 0 #000,
+-1px -1px 0 #000,  
+ 1px -1px 0 #000,
+ -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
