@@ -1,3 +1,8 @@
+# Final Dashboard
+ [Group 4 Dashboard](https://groupfour.ngrok.io)
+
+
+
 ![image](https://github.com/abtieku/group4-project/blob/main/Resources/Restaurant.jpg)
 # Restaurant Business Analysis
 
@@ -72,9 +77,6 @@ Tableau will be used to create interactive dashboards.
 
 [Tableau Dashboards Group 4](https://github.com/abtieku/group4-project/tree/shanu_segment2/Dashboard/Tableau)
  
-#### Interactive map
- [Group 4 Interactive Map](https://groupfour.ngrok.io)
-
 
 ## Google Slides
 Google Slides will be used for the presentation..
