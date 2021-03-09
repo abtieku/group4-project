@@ -53,8 +53,19 @@
             </table>
         </div>
         <div class="float-right">
-            <table id="dataframe" >
-                {{table | safe}}
+            <table>
+                <tr>
+                {% for i in df.columns %}
+                    <th>{{ i }}</th>
+                {% endfor %}
+                </tr>
+                {% for row in df.iterrows() %}
+                    <tr>
+                        {% for x in row %}
+                            <td>{{ row[0] }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
             </table>
         </div>
         <!-- <div id="visualisation1">
