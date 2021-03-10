@@ -23,21 +23,23 @@
 
 <script> 
     let state = '{{ state_2 }}' ;
-    let selection = '{{ category_2 }}';  
+    let selection = '{{ category_2 }}';
+    let star_choice = '{{ star_choice }}';  
 </script>
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid">
-        <h1 class="text_white">Group Four Final Dashboard</h1>
+        <h1 class="text_white">Restaurants in US</h1>
+        <h2>Dine The Best!</h2>
         <p>The map below filters Yelp Restaurant dataset based on category and state.</p>
         <hr>
         <p>You can also create a new restaurant and have our machine learning model attempt to classify it by star, go ahead and try it out!</p>
         <p>
-          <a class="btn btn-primary btn-lg text_black" href="/tab_page" role="button">Second Page</a>
+          <a class="btn btn-primary btn-lg text_black center_button" href="/tab_page" role="button">Tableau</a>
         </p>
     </div>
-    <h2 class="text_black" >Map</h2>
-    <form action='#' method="POST">
+    <form action='#' method="POST" style="float: left; width: 50%; height: 50%;">
+        <h2 class="text_black" >Map</h2>
         <div class="form-group">
         <label class="text_black" >Category</label>
         <br></br>
@@ -58,10 +60,57 @@
                 {% endfor %}
             </select>    
         </div>
+        <div class="form-group">
+            <label class="text_black">Star Rating</label>
+            <br></br>
+            <select name="star_rating" id="star_rating" style="width:200px;">
+                <option value="{{star_choice}}">{{ star_choice }}</option>
+                <option value="all">all</option>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>    
+        </div>
+        <div>
             <button class="center btn btn-primary text_black" type="submit" value="Submit">Filter</button>
         </div>
     
     </form>
+    <form action='/map?change_me=Predict' method="GET" style="float: left; width: 50%; height: 70%;">
+        <h2 class="text_black" >Predict</h2>
+        <div class="form-group">
+        <label class="text_black" >Category</label>
+        <br></br>
+        <select  name="category_pred" id="category_pred" style="width:200px;" class="select_button">
+            <option value="{{ category_2 }}">{{ category_2 }}</option> 
+            {% for category in categories %}
+            <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select> <button id="category" type="button" >+</button>
+        </div>
+        <div class="form-group">
+            <label class="text_black">State</label>
+            <br></br>
+            <select name="state_pred" id="state_pred" style="width:200px;">
+                <option value="{{ state_2 }}">{{ state_2 }}</option>
+                {% for state in states %}
+                <option value="{{ state }}">{{ state }}</option> 
+                {% endfor %}
+            </select><button id="state_button" type="button" >+</button>    
+        <div class="form-group">
+            <label class="text_black">Name</label>
+            <br></br>
+            <input type="text" id="category_typed" name="category_typed"> <button id="new_name" type="button" >+</button>
+        </div>
+        </div>
+            <button class="center btn btn-primary text_black" type="submit" value="Predict">Predict</button>
+        </div>
+    </form>
+    <div id="loader" class="center_map loading-spinner" style="float:right;"></div>
+    <div id="mapid">
+    </div>
     <div class="container">
         <div id="table_1" class="float-left">
             <table id="state_count" class="table_1">
@@ -98,17 +147,7 @@
                 {% endfor %}
             </table>
         </div>
-        <!-- <div id="visualisation1">
-            <h2>Visualization 1</h2>
-        </div>
-        <div id="visualisation2">
-            <h2>Visualisation2</h2>
-        </div> -->
     </div>
-    <div id="loader" class="center_map loading-spinner" style="float:center;"></div>
-    <div id="mapid">
-    </div>
-
 </body>
 <!-- Leaflet -->
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"

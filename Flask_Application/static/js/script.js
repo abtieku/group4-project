@@ -5,27 +5,57 @@ console.log("working");
 
 console.log(state);
 console.log(selection);
+console.log(star_choice)
 
 if (selection == "all categories") {
     selection = "all";
 };
 
 
-let map = L.map(
-    'mapid', {
-    center: [40.7, -94.5], 
-    zoom: 4
-});
+
 
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
 	maxZoom: 18,
 	accessToken: API_KEY
+
 });
 
+// We create the second tile layer that will be the background of our map.
+let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+	maxZoom: 18,
+	accessToken: API_KEY
+});
 
-if (state == "all" && selection == "all") {
+let night_preview = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/navigation-preview-night-v2/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+	maxZoom: 18,
+	accessToken: API_KEY
+});
+
+let map = L.map(
+    'mapid', {
+    center: [40.7, -94.5], 
+    zoom: 4,
+    layers: [night_preview]
+});
+
+let baseMaps = {
+    "Streets": streets,
+    "Satellite": satelliteStreets,
+    "Night Preview":night_preview
+  };
+
+
+
+
+
+
+
+
+if (state == "all" && selection == "all" && star_choice == "all") {
     d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
     console.log(data);
     for (var i = 0; i < data["lat"].length; i++) {
@@ -42,14 +72,11 @@ if (state == "all" && selection == "all") {
 
 
 
-
-
-
-if (state == "all" && selection != "all" && selection != "select category") {
+if (state == "all" && selection != "all"  && star_choice != "all") {
     d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
     console.log(data);
     for (var i = 0; i < data["lat"].length; i++) {
-        if (data[selection][i] == 1) {
+        if (data[selection][i] == 1 && data["stars"][i] == star_choice) {
         var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
         marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
         marker.addTo(map)
@@ -60,7 +87,55 @@ if (state == "all" && selection != "all" && selection != "select category") {
 });
 };
 
-if (selection == "all" && state != "all") {
+if (state == "all" && selection == "all"  && star_choice != "all") {
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+    console.log(data);
+    for (var i = 0; i < data["lat"].length; i++) {
+        if (data["stars"][i] == star_choice) {
+        var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+        marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+        marker.addTo(map)
+        }
+    }
+    var loadan = document.getElementById("loader");
+    loadan.remove();
+});
+};
+
+
+if (state == "all" && selection != "all"  && star_choice == "all") {
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+    console.log(data);
+    for (var i = 0; i < data["lat"].length; i++) {
+        if (data["stars"][i] == star_choice && data[selection] == 1) {
+        var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+        marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+        marker.addTo(map)
+        }
+    }
+    var loadan = document.getElementById("loader");
+    loadan.remove();
+});
+};
+
+
+if (selection == "all" && state != "all" && star_choice != "all")  {
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+        console.log(data);
+        for (var i = 0; i < data["lat"].length; i++) {
+            if (data["state"][i] == state && data["stars"][i] == star_choice ) {
+            var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+            marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+            marker.addTo(map)
+            }
+        }
+        var loadan = document.getElementById("loader");
+        loadan.remove();
+    });
+};
+
+
+if (selection == "all" && state != "all" && star_choice == "all")  {
     d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
         console.log(data);
         for (var i = 0; i < data["lat"].length; i++) {
@@ -75,7 +150,8 @@ if (selection == "all" && state != "all") {
     });
 };
 
-if (selection != "all" && state != "all") { 
+
+if (selection != "all" && state != "all" && star_choice == "all")  { 
 d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
     console.log(data);
     for (var i = 0; i < data["lat"].length; i++) {
@@ -90,4 +166,86 @@ d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
 });
 };
 
-streets.addTo(map);
+
+
+if (selection == "all" && state == "all" && star_choice != "all")   { 
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+        console.log(data);
+        for (var i = 0; i < data["lat"].length; i++) {
+            if (data["stars"][i] == star_choice) {
+            var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+            marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+            marker.addTo(map)
+            }
+        }
+        var loadan = document.getElementById("loader");
+        loadan.remove();
+    });
+    };
+
+
+if (selection == "all" && state == "all" && star_choice != "all")  { 
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+        console.log(data);
+        for (var i = 0; i < data["lat"].length; i++) {
+            if (data["stars"][i] == star_choice) {
+            var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+            marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+            marker.addTo(map)
+            }
+        }
+        var loadan = document.getElementById("loader");
+        loadan.remove();
+    });
+    };
+
+if (selection != "all" && selection != "all categories" && state == "all" && star_choice != "all")  { 
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+        console.log(data);
+        for (var i = 0; i < data["lat"].length; i++) {
+            if (data["stars"][i] == star_choice && data[selection][i] == 1) {
+            var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+            marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+            marker.addTo(map)
+            }
+        }
+        var loadan = document.getElementById("loader");
+        loadan.remove();
+    });
+    };
+    
+
+if (selection != "all" && state != "all" && star_choice != "all")  { 
+    d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
+        console.log(data);
+        for (var i = 0; i < data["lat"].length; i++) {
+            if (data["stars"][i] == star_choice && data["state"][i] == state && data[selection] == 1) {
+            var marker = new L.marker([parseFloat(data["lat"][i]), parseFloat(data["lng"][i])]);
+            marker.bindPopup( "<h3>"+ data["state"][i] +" "+ data['name'][i] + "</h3><b></b><h4>review count: " + data["review_count"][i] +"<b></b><h4> Star Rating: "+ data["stars"][i] +"</h4>").openPopup();
+            marker.addTo(map)
+            }
+        }
+        var loadan = document.getElementById("loader");
+        loadan.remove();
+    });
+    };
+
+
+L.control.layers(baseMaps).addTo(map);
+
+var theMarker = {};
+
+map.on('click',function(e){
+  lat = e.latlng.lat;
+  lon = e.latlng.lng;
+
+  console.log("You clicked the map at LAT: "+ lat+" and LONG: "+lon );
+      //Clear existing marker, 
+
+      if (theMarker != undefined) {
+            map.removeLayer(theMarker);
+      };
+
+  //Add a marker to show where you clicked.
+   theMarker = L.marker([lat,lon]).bindPopup("<h3>Name</h3>").addTo(map);  
+});
