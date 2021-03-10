@@ -1,7 +1,3 @@
-# [Link to Website Interactive Dashboard](https://groupfour.ngrok.io)
-
-
-
 ![image](https://github.com/abtieku/group4-project/blob/main/Resources/Restaurant.jpg)
 # Restaurant Business Analysis
 
@@ -75,7 +71,8 @@ Tableau will be used to create interactive dashboards.
 [Link to Tableau Visualization](https://public.tableau.com/profile/shanu.joseph#!/vizhome/RestaurantBusinessAnalysis/Story1?publish=yes)
 
 [Tableau Dashboards Group 4](https://github.com/abtieku/group4-project/tree/shanu_segment2/Dashboard/Tableau)
- 
+
+### [Link to Website Interactive Dashboard](https://groupfour.ngrok.io)
 
 ## Google Slides
 Google Slides will be used for the presentation..
