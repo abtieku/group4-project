@@ -55,7 +55,11 @@ as well as two corresponding tables in Postgres named business_table and attribu
 - Model was trained,scaled,standardised and balanced accuracy score was computed.
 - Finally a classication report is printed using the imbalanced_classification_report.
 
- 
+#### Model Accuracy Score
+![](https://github.com/abtieku/group4-project/blob/main/Resources/Logistic%20Regression_accuracy%20score.png)
+#### Classification Report
+![](https://github.com/abtieku/group4-project/blob/main/Resources/Logistic%20classification%20report.png)
+
 ## Neural network classifier
  
 A new table was created in postgres using an inner join between our two tables business_table and attributes_table on the business_id column
