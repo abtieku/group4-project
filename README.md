@@ -7,7 +7,7 @@ This project will use Machine Learning Algorithms and models to predict the star
 
 ## Reason Why We Selected Our Topic
 
-With this project, we want to be able to help people search the best restaurants in a particular category in a particular city.
+Our reason for this topic is that we want to be able to help people find the best restaurants.
 
 ## Description of the Source of Data
 
@@ -63,7 +63,7 @@ Tableau will be used to create interactive dashboards.
 
 [Tableau Dashboards Group 4](https://github.com/abtieku/group4-project/tree/shanu_segment2/Dashboard/Tableau)
 
-### [Link to Website Interactive Dashboard](https://groupfour.ngrok.io)
+## [Link to Website Interactive Dashboard](https://groupfour.ngrok.io)
 
 ## Google Slides
 Google Slides will be used for the presentation..
