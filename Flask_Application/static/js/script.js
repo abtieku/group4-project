@@ -35,6 +35,8 @@ if (state == "all" && selection == "all") {
         marker.addTo(map)
         }
     }
+    var loadan = document.getElementById("loader");
+    loadan.remove()
 });
 };
 
@@ -53,6 +55,8 @@ if (state == "all" && selection != "all" && selection != "select category") {
         marker.addTo(map)
         }
     }
+    var loadan = document.getElementById("loader");
+    loadan.remove();
 });
 };
 
@@ -66,6 +70,8 @@ if (selection == "all" && state != "all") {
             marker.addTo(map)
             }
         }
+        var loadan = document.getElementById("loader");
+        loadan.remove();
     });
 };
 
@@ -79,6 +85,8 @@ d3.json("https://groupfour.ngrok.io/json_data/data.json").then(function(data) {
         marker.addTo(map)
         }
     }
+    var loadan = document.getElementById("loader");
+    loadan.remove();
 });
 };
 
