@@ -28,12 +28,12 @@
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid">
-        <h1>Group Four Final Dashboard</h1>
+        <h1 class="text_white">Group Four Final Dashboard</h1>
         <p>The map below filters Yelp Restaurant dataset based on category and state.</p>
         <hr>
         <p>You can also create a new restaurant and have our machine learning model attempt to classify it by star, go ahead and try it out!</p>
         <p>
-          <a class="btn btn-primary btn-lg" href="/tab_page" role="button">Second Page</a>
+          <a class="btn btn-primary btn-lg text_black" href="/tab_page" role="button">Second Page</a>
         </p>
     </div>
     <h2 class="text_black" >Map</h2>
@@ -41,7 +41,7 @@
         <div class="form-group">
         <label class="text_black" >Category</label>
         <br></br>
-        <select name="category" id="category" style="width:200px;">
+        <select  name="category" id="category" style="width:200px;" class="select_button">
             <option value="{{ category_2 }}">{{ category_2 }}</option>
             {% for category in categories %}
             <option value="{{ category }}">{{ category }}</option>
@@ -58,7 +58,7 @@
                 {% endfor %}
             </select>    
         </div>
-            <button class="center btn btn-primary" type="submit" value="Submit">Filter</button>
+            <button class="center btn btn-primary text_black" type="submit" value="Submit">Filter</button>
         </div>
     
     </form>
@@ -66,8 +66,8 @@
         <div id="table_1" class="float-left">
             <table id="state_count" class="table_1">
                 <tr>
-                    <th>State</th>
-                    <th>Total Restaurants</th>
+                    <th class="text_white">State</th>
+                    <th class="text_white">Total Restaurants</th>
                 </tr>
                 {% for row in state_count.iterrows() %}
                 <tr>
@@ -80,11 +80,11 @@
         <div class="float-right">
             <table class="table_2">
                 <tr>
-                    <th>Name</th>
-                    <th>State</th>
-                    <th>Star Rating</th>
-                    <th>Number of Reviews</th>
-                    <th>{{ category_2 }}</th>
+                    <th class="text_white">Name</th>
+                    <th class="text_white">State</th>
+                    <th class="text_white">Star Rating</th>
+                    <th class="text_white">Number of Reviews</th>
+                    <th class="text_white">{{ category_2 }}</th>
 
                 </tr>
                 {% for row in df.iterrows() %}
@@ -105,7 +105,8 @@
             <h2>Visualisation2</h2>
         </div> -->
     </div>
-    <div id="mapid" class="center_map">
+    <div id="loader" class="center_map loading-spinner" style="float:center;"></div>
+    <div id="mapid">
     </div>
 
 </body>
