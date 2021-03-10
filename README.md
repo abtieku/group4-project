@@ -3,9 +3,7 @@
 
 ## Purpose of the Project 
 
-- Find the most popular restaurants across different states in US with regards to the review ratings provided by customers.
-- Use different machine learning models to predict the star rating and success of a restaurant based on restaurant attributes such as food served, noise level, delivery, takeout, price range etc. 
-- Train and evaluate different machine learning models to predict the model with the highest accuracy score.
+This project will use Machine Learning Algorithms and models to predict the star rating of a restaurant based on features such as food served, noise level, location, price range, etc and also predict the success of a restaurant based on its features. Different Machine Learning models are trained and evaluated to predict the model with the highest accuracy. 
 
 ## Reason Why We Selected Our Topic
 
@@ -19,11 +17,9 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ## Questions to be Answered With the Data
 
-- What Features makes a Restaurant successful
-- Can we accurately predict the success of a restaurant given these features
-- What is the percentage for positive and negative reviews per state per category?
-- What are the top 5 restaurants in a state?
-- Can we accurately classify a restaurant by star rating given these features
+- What Features makes a Restaurant successful?
+- Can we accurately classify a restaurant by star ratings given these features?
+- Can we accurately predict the success of a restaurant given these features?
 
 ## Communication Protocols
 
@@ -35,18 +31,17 @@ We have been entertaining the idea of incorporating a Neural Network to predict 
 
 [Machine Learning Group 4](https://github.com/abtieku/group4-project/tree/main/Machine_Learning)
 
+## Database Storage
 
-## Database
+PostgreSQL is where data is stored and is hosted on the Google Cloud Platform.
 
-Google Cloud and Postgres is being used to host our server
-
-### server
+### Server
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/server.png)
 
-### tables
+### Tables
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/tables.png)
 
-### data
+### Data
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/data.png)
 
 Schema and README.md provided below
@@ -56,10 +51,6 @@ Schema and README.md provided below
 ## Data Cleaning and Analysis
 
 Python Pandas,sklearn, and tensorflow libraries will be used to clean the data,perform an exploratory analysis, and build our Machine learning models.
-
-## Database Storage
-
-PostgreSQL is where data is stored and is hosted on the Google Cloud Platform.
 
 ## Requirements.txt
 We set up a requirements.txt file in the root folder. This file contains what packages and libraries are needed to successfully run the code.
