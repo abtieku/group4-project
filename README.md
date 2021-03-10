@@ -63,7 +63,7 @@ Tableau will be used to create interactive dashboards.
 
 [Tableau Dashboards Group 4](https://github.com/abtieku/group4-project/tree/shanu_segment2/Dashboard/Tableau)
 
-## [Link to Website Interactive Dashboard](https://groupfour.ngrok.io)
+[Link to Website Interactive Dashboard](https://groupfour.ngrok.io)
 
 ## Google Slides
 Google Slides will be used for the presentation..
