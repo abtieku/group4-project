@@ -11,7 +11,7 @@ Our reason for this topic is that we want to be able to help people find the bes
 
 ## Description of the Source of Data
 
-The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 different json data files out of which we are just taking the ```business.json```
+The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 different json data files out of which we are just taking the ```business.json```.
 
 - The ```business.json``` file contains business data including location data, attributes, categories and star ratings for the restaurants.
 
@@ -27,7 +27,7 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ## Machine Learning Model
 
-We have been entertaining the idea of incorporating a Neural Network to predict the star rating of a restaurant based on features such as food served, noise level, location etc. The second viable option in mind is to create a model predicting the success of a restaurant based on these same features or attributes utilizing a Logistic regression. Information for Both Models as well as a README.md is located in the link provided below
+We have been entertaining the idea of incorporating a Neural Network to predict the star rating of a restaurant based on features such as food served, noise level, location etc. The second viable option in mind is to create a model predicting the success of a restaurant based on these same features or attributes utilizing a Logistic regression. Information for Both Models as well as a README.md is located in the link provided below.
 
 [Machine Learning Group 4](https://github.com/abtieku/group4-project/tree/main/Machine_Learning)
 
@@ -44,16 +44,16 @@ PostgreSQL is where data is stored and is hosted on the Google Cloud Platform.
 ### Data
 ![alt-text](https://github.com/abtieku/group4-project/blob/main/Resources/data.png)
 
-Schema and README.md provided below
+Schema and README.md provided below.
 
 [Database Group 4](https://github.com/abtieku/group4-project/tree/main/Database)
 
 ## Data Cleaning and Analysis
 
-Python Pandas,sklearn, and tensorflow libraries will be used to clean the data,perform an exploratory analysis, and build our Machine learning models.
+Python Pandas, sklearn, and tensorflow libraries will be used to clean the data, perform an exploratory analysis, and build our Machine Learning models.
 
 ## Requirements.txt
-We set up a requirements.txt file in the root folder. This file contains what packages and libraries are needed to successfully run the code.
+We set up a requirements.txt file in the main folder. This file contains what packages and libraries are needed to successfully run the code.
 
 ## Dashboard
 
