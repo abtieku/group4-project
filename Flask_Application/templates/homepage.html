@@ -25,6 +25,8 @@
     let state = '{{ state_2 }}' ;
     let selection = '{{ category_2 }}';
     let star_choice = '{{ star_choice }}';  
+    let state_3 = "placeholder";
+    let selection_3 = "placeholder"
 </script>
 </head>
 <body>
@@ -78,13 +80,13 @@
         </div>
     
     </form>
-    <form action='/map?change_me=Predict' method="GET" style="float: left; width: 50%; height: 70%;">
+    <form action='/prediction' method="POST" style="float: left; width: 50%; height: 70%;">
         <h2 class="text_black" >Predict</h2>
         <div class="form-group">
         <label class="text_black" >Category</label>
         <br></br>
         <select  name="category_pred" id="category_pred" style="width:200px;" class="select_button">
-            <option value="{{ category_2 }}">{{ category_2 }}</option> 
+            <option value="{{ selection_3 }}">{{ selection_3 }}</option> 
             {% for category in categories %}
             <option value="{{ category }}">{{ category }}</option>
             {% endfor %}
@@ -94,7 +96,7 @@
             <label class="text_black">State</label>
             <br></br>
             <select name="state_pred" id="state_pred" style="width:200px;">
-                <option value="{{ state_2 }}">{{ state_2 }}</option>
+                <option value="{{ state_3 }}">{{ state_3 }}</option>
                 {% for state in states %}
                 <option value="{{ state }}">{{ state }}</option> 
                 {% endfor %}

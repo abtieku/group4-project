@@ -134,25 +134,25 @@ def map():
             state = request.form["state"]
             selection = request.form["category"]
             star_choice = request.form["star_rating"]
-            print("redirecting")
+            print(request.form)
             return redirect(url_for("map",change_me="True",state=state,selection=selection,star_choice=star_choice,code=302,response=200,_scheme="https",_external=True))    
     
-    
-    elif answer == "Predict":
-        print(request.form)
     
     return render_template(
         "homepage.html",
         categories=["all"] + categories,
-        df = df_1,
-        state_count = df_1.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False), 
-        category_2="all",
+        df = send_me,
+        state_count = df2.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False), 
+        category_2=selection,
         states=["all"] + list(set(df_main.state.tolist())),
-        state_2="all",
-        star_choice ="all"
+        state_2=state,
+        star_choice = star_choice
     )
 
-
+@app.route('/prediction', methods=["GET","POST"])
+def prediction():
+    print(request.form)
+    return "ML"
 
 @app.route("/tab_page")
 def page_2():
