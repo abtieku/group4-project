@@ -34,6 +34,42 @@ with open("json_data/data.json","w") as outfile:
 
 print("json written")
 
+#Favicon Directory
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+#Favicon Directory
+@app.route('/apple-touch-icon-120x120-precomposed.png')
+def favicon_apple120_pre():
+    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
+
+#Favicon Directory
+@app.route('/apple-touch-icon-120x120.png')
+def favicon_apple120():
+    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
+
+#Favicon Directory
+@app.route('/apple-touch-icon-precomposed.png')
+def favicon_apple_pre():
+    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
+
+#Favicon Directory
+@app.route('/apple-touch-icon.png')
+def apple_touch_icon():
+    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
+
+
+
+
+
+
+
+
+
+
+
+
 @app.route('/', methods=["GET","POST"])
 def first_page():
     df_1 = df_main.copy()
@@ -112,31 +148,6 @@ def page_2():
 @app.route("/json_data/data.json")
 def get_json():
     return send_file("json_data/data.json")
-
-#Favicon Directory
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
-
-#Favicon Directory
-@app.route('/apple-touch-icon-120x120-precomposed.png')
-def favicon_apple120_pre():
-    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
-
-#Favicon Directory
-@app.route('/apple-touch-icon-120x120.png')
-def favicon_apple120():
-    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
-
-#Favicon Directory
-@app.route('/apple-touch-icon-precomposed.png')
-def favicon_apple_pre():
-    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
-
-#Favicon Directory
-@app.route('/apple-touch-icon.png')
-def apple_touch_icon():
-    return send_from_directory(os.path.join(app.root_path,'favicon_io'), 'apple-touch-icon.png', mimetype='image/vnd.microsoft.icon')
 
 
 if __name__ == "__main__":
