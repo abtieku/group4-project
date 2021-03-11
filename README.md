@@ -17,9 +17,12 @@ The Dataset came from [Yelp](https://www.yelp.com/dataset). It contains 5 differ
 
 ## Questions to be Answered With the Data
 
+- Average Restaurant Ratings per State per category
+- Top 5 Restaurants Per State
 - What Features makes a Restaurant successful?
 - Can we accurately classify a restaurant by star ratings given these features?
 - Can we accurately predict the success of a restaurant given these features?
+
 
 ## Communication Protocols
 
