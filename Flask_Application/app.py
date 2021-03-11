@@ -6,6 +6,7 @@ from pprint import pprint
 import os
 import json
 import time
+from ML_Classifier import nueral_network_classifier
 
 engine = build_engine(database_name="database1",host="35.225.193.21")
 
@@ -134,26 +135,29 @@ def map():
             state = request.form["state"]
             selection = request.form["category"]
             star_choice = request.form["star_rating"]
-            print("redirecting")
+            print(request.form)
             return redirect(url_for("map",change_me="True",state=state,selection=selection,star_choice=star_choice,code=302,response=200,_scheme="https",_external=True))    
     
-    
-    elif answer == "Predict":
-        print(request.form)
     
     return render_template(
         "homepage.html",
         categories=["all"] + categories,
-        df = df_1,
-        state_count = df_1.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False), 
-        category_2="all",
+        df = send_me,
+        state_count = df2.groupby("state").count()[["business_id"]].sort_values("business_id", ascending=False), 
+        category_2=selection,
         states=["all"] + list(set(df_main.state.tolist())),
-        state_2="all",
-        star_choice ="all"
+        state_2=state,
+        star_choice = star_choice
     )
 
+@app.route('/prediction', methods=["GET","POST"])
+def prediction():
+    new_dict = {}
+    for i in request.form:
+        new_dict[i] = request.form[i].split(",")
 
-
+    response = nueral_network_classifier(new_dict)
+    return "<h1>"+str(response)+" Stars</h1>"
 @app.route("/tab_page")
 def page_2():
     return render_template("page_2.html")
