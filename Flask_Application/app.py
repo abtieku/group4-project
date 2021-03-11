@@ -6,6 +6,7 @@ from pprint import pprint
 import os
 import json
 import time
+from ML_Classifier import nueral_network_classifier
 
 engine = build_engine(database_name="database1",host="35.225.193.21")
 
@@ -151,9 +152,12 @@ def map():
 
 @app.route('/prediction', methods=["GET","POST"])
 def prediction():
-    print(request.form)
-    return "ML"
+    new_dict = {}
+    for i in request.form:
+        new_dict[i] = request.form[i].split(",")
 
+    response = nueral_network_classifier(new_dict)
+    return "<h1>"+str(response)+" Stars</h1>"
 @app.route("/tab_page")
 def page_2():
     return render_template("page_2.html")

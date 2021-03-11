@@ -32,7 +32,7 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <h1 class="text_white">Restaurants in US</h1>
-        <h2>Dine The Best!</h2>
+        <h2>Yelp Data</h2>
         <p>The map below filters Yelp Restaurant dataset based on category and state.</p>
         <hr>
         <p>You can also create a new restaurant and have our machine learning model attempt to classify it by star, go ahead and try it out!</p>
@@ -84,27 +84,31 @@
         <h2 class="text_black" >Predict</h2>
         <div class="form-group">
         <label class="text_black" >Category</label>
-        <br></br>
+        <br></br> 
         <select  name="category_pred" id="category_pred" style="width:200px;" class="select_button">
-            <option value="{{ selection_3 }}">{{ selection_3 }}</option> 
+            <option id="category_pred" value="{{ selection_3 }}">{{ selection_3 }}</option> 
             {% for category in categories %}
             <option value="{{ category }}">{{ category }}</option>
             {% endfor %}
-        </select> <button id="category" type="button" >+</button>
+        </select> <button id="category_button_add" type="button"  onclick="add_category()" >+</button> <button id="category_button_subtract" type="button" >-</button>
         </div>
         <div class="form-group">
             <label class="text_black">State</label>
             <br></br>
-            <select name="state_pred" id="state_pred" style="width:200px;">
+            <select name="state_pred"  id="state_pred" style="width:200px;"> 
                 <option value="{{ state_3 }}">{{ state_3 }}</option>
                 {% for state in states %}
                 <option value="{{ state }}">{{ state }}</option> 
                 {% endfor %}
-            </select><button id="state_button" type="button" >+</button>    
+            </select><button id="state_button_add" type="button" onclick="add_state()" >+</button> <button id="state_button_subtract" type="button" >-</button>   
         <div class="form-group">
             <label class="text_black">Name</label>
             <br></br>
             <input type="text" id="category_typed" name="category_typed"> <button id="new_name" type="button" >+</button>
+            <input type="hidden" id="lat" name="lat" value=""></option> 
+            <input type="hidden" id="lng" name="lng" value=""></option> 
+            <input type="hidden" id="categories_lst" name="categories_lst" value=""></option>
+            <input type="hidden" id="states_lst" name="states_lst" value=""></option>  
         </div>
         </div>
             <button class="center btn btn-primary text_black" type="submit" value="Predict">Predict</button>

@@ -49,6 +49,20 @@ let baseMaps = {
   };
 
 
+function add_state() {
+    let addMe = document.getElementById("state_pred");
+    console.log("clicked"); 
+    let add_this_one = addMe.options[addMe.selectedIndex].text;
+    document.getElementById("states_lst").value += add_this_one + ",";
+};
+
+
+function add_category() {
+    let addMe2 = document.getElementById("category_pred")
+    console.log("clicked"); 
+    let add_this_one = addMe2.options[addMe2.selectedIndex].text;
+    document.getElementById("categories_lst").value += add_this_one + ",";
+};
 
 
 
@@ -247,5 +261,12 @@ map.on('click',function(e){
       };
 
   //Add a marker to show where you clicked.
-   theMarker = L.marker([lat,lon]).bindPopup("<h3>Name</h3>").addTo(map);  
+   theMarker = L.marker([lat,lon]).bindPopup("<h3>Name</h3>").addTo(map);
+   let element = document.getElementById("lat");
+   element.value = lat;
+   let element_2 = document.getElementById("lng");
+   element_2.value = lon;
+
 });
+
+
