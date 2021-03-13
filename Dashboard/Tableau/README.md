@@ -6,9 +6,9 @@ The Metrics created for analysis of this project are visualized to create report
 
 ## Description of interactive elements
 
-- Global filters are used to apply filter to all the worksheets on this dashboard. Restaurants are filtered based on state and city.
+- Global filters are used to apply filter to all the worksheets on this dashboard. Restaurants are filtered based on State, Average stars and their review count.
 - Calculated fields are created.
-- URL Action for viewing the results per State.
+- Information Tooltips used to display graph information.
 
 ## Visualization
 
