@@ -66,7 +66,6 @@ Used to predict binary outcome restaurant business is successful or not and also
 
 #### Model Accuracy Score
 ![](https://github.com/abtieku/group4-project/blob/main/Resources/Random%20oversampling%20accuracy%20score.png)
-
 #### Classification Report
 ![](https://github.com/abtieku/group4-project/blob/main/Resources/Random%20oversampling%20classification%20report.png)
 
