@@ -57,8 +57,18 @@ as well as two corresponding tables in Postgres named business_table and attribu
 
 #### Model Accuracy Score
 ![](https://github.com/abtieku/group4-project/blob/main/Resources/Logistic%20Regression_accuracy%20score.png)
+
 #### Classification Report
 ![](https://github.com/abtieku/group4-project/blob/main/Resources/Logistic%20classification%20report.png)
+
+## Random Oversampling 
+Used to predict binary outcome restaurant business is successful or not and also to predict which model performs better in terms of accuracy.
+
+#### Model Accuracy Score
+![](https://github.com/abtieku/group4-project/blob/main/Resources/Random%20oversampling%20accuracy%20score.png)
+
+#### Classification Report
+![](https://github.com/abtieku/group4-project/blob/main/Resources/Random%20oversampling%20classification%20report.png)
 
 ## Neural network classifier
  
