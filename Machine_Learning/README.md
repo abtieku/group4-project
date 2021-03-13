@@ -57,8 +57,17 @@ as well as two corresponding tables in Postgres named business_table and attribu
 
 #### Model Accuracy Score
 ![](https://github.com/abtieku/group4-project/blob/main/Resources/Logistic%20Regression_accuracy%20score.png)
+
 #### Classification Report
 ![](https://github.com/abtieku/group4-project/blob/main/Resources/Logistic%20classification%20report.png)
+
+## Random Oversampling 
+Used to predict binary outcome restaurant business is successful or not and also to predict which model performs better in terms of accuracy.
+
+#### Model Accuracy Score
+![](https://github.com/abtieku/group4-project/blob/main/Resources/Random%20oversampling%20accuracy%20score.png)
+#### Classification Report
+![](https://github.com/abtieku/group4-project/blob/main/Resources/Random%20oversampling%20classification%20report.png)
 
 ## Neural network classifier
  
@@ -96,6 +105,10 @@ Our classification report shows an unfortunately low accuracy to predict the cor
  
 ## Model Choice including limitations and benefits
 - Neural network is an alternative to all the models as it can handle non linear relationships and can handle messy data.
-- Accuracy score was lower for neural compared to the two other models we used.
+- Accuracy score was lower for neural network.
+- Logistic regression and Random oversampling was used to predict the success. Comparing the two models Logistic had a higher accuracy score.
+- Logistic regression is easier to implement, interpret, and very efficient to train
+- Logistic regression is less inclined to over-fitting but it can overfit in high dimensional datasets
+
  
 
