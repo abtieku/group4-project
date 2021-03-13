@@ -105,6 +105,10 @@ Our classification report shows an unfortunately low accuracy to predict the cor
  
 ## Model Choice including limitations and benefits
 - Neural network is an alternative to all the models as it can handle non linear relationships and can handle messy data.
-- Accuracy score was lower for neural compared to the two other models we used.
+- Accuracy score was lower for neural network.
+- Logistic regression and Random oversampling was used to predict the success. Comparing the two models Logistic had a higher accuracy score.
+- Logistic regression is easier to implement, interpret, and very efficient to train
+- Logistic regression is less inclined to over-fitting but it can overfit in high dimensional datasets
+
  
 
